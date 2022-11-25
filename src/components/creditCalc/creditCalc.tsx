@@ -72,8 +72,8 @@ export const CreditCalcForm: FC<CreditCalcProps> = ({
                             <a href={organization_website} title={organization}>{organization}</a>
                         </td>
                         <td title={tarif}>{tarif}</td>
-                        <td>{perMonth}</td>
-                        <td>{overPayment}</td>
+                        <td>{perMonth} руб.</td>
+                        <td title={overPayment}>{overPayment} руб.</td>
                         <td>{rate}</td>
                     </tr>
                 )

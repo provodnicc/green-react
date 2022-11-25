@@ -1,11 +1,23 @@
- .input-credit-form{
-    display: grid;
+ .input-credit-form .input-credit-container{
+    display: flex;
     margin:auto;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     max-width: 80%;
     font-size: 20px;
+    flex-direction: column;
 }
-
-.input-credit-form > *{
+.input-credit-form .input-credit-container .row:first-child{
+    display: flex;
+    margin-bottom: 50px;
+}
+.input-credit-form .input-credit-container .column:last-child{
+    margin-left: 50px;
+}
+.input-credit-form .ReactButton{
+    display: flex;
+    margin: auto;
+    margin-bottom: 50px;
+}
+.input-credit-form .input-credit-container > *{
     margin: 5px 10px;
 }

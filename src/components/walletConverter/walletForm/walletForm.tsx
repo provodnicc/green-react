@@ -127,7 +127,6 @@ export const WalletForm: FC<WalletForm> = ({}) => {
 
 				<label>Сумма:</label>
 				<WalletFormInput val={toInputValue} onChange={setToInputValue} readonly={true}/>
-		
 			</div>
 		</div>
         </>

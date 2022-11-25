@@ -15,31 +15,35 @@ export interface InputProps{
 export class InputCredit extends React.Component<InputProps>{
     render():React.ReactNode{
         return(
-        <>
-                <div>
-                    <span>Сумма кредита:</span>
-                    <CurrencyInput 
-                        rightIcon={'₽'}
-                        fractionDigits={0}
-                        value={this.props.request.amount}
-                        onValueChange={this.handleCreditSumChange}
-                        className="ReactInput"
-                    />
+               
+        <>  <div className="input-credit-container">    
+                <div className="row">
+                    <div className="column">
+                        <span>Сумма кредита:</span>
+                        <CurrencyInput 
+                            rightIcon={'₽'}
+                            fractionDigits={0}
+                            value={this.props.request.amount}
+                            onValueChange={this.handleCreditSumChange}
+                            className="ReactInput"
+                        />
+                    </div>
+                    <div className="column">
+                        <span>Цель кредита:</span>
+                        <PurposeSelect
+                            value ={this.props.request.purpose}
+                            onChange={this.handleCreditPurposeChange}
+                       />
+                    </div>
                 </div>
-                <div>
-                    <span>Цель кредита:</span>
-                    <PurposeSelect
-                        value ={this.props.request.purpose}
-                        onChange={this.handleCreditPurposeChange}
-                    />
-                </div>
-                <div>
+                <div className="row">
                     <span>Желаемый срок кредита:</span>
                     <TermSelect
                         value ={this.props.request.term}
                         onChange={this.handleCreditTermChange}
                     />
                 </div>
+            </div>
         </>
     )
     

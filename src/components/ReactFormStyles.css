@@ -39,23 +39,28 @@
     background-color: none;
 }
 
+
+
+
 .ReactSelect{
     margin-left: 25px;
 }
+
 .ReactSelect >*{
 
     font-size: 20px;
 }
+
 .ReactSelect button{
     font-size: 20px;
-    background-color: red;
     box-shadow: none;
-    
 }
+
 .ReactSelect button:hover{
     box-shadow: none;
-    background-color: red;
+
 }
+
 .ReactSelect button [class$="button-caption"]{
    
 }
@@ -63,7 +68,6 @@
     border-radius: 5px;
     box-shadow: none;
     border: 1px solid #449FFB;
-    padding: 15px 12px;
 }
 .ReactSelect button [class$="button-inner-shadow"]{
 
@@ -71,13 +75,12 @@
     box-shadow: none;
 }
 .ReactSelect button [class$="button-inner-shadow"]:hover{
-    background-color: red;
     box-shadow: none;
 
 }
 .ReactSelect button div:nth-child(2){
     font-size: 20px;
-    background-color: red;
+
 
     
 }

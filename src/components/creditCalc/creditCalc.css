@@ -6,9 +6,9 @@
         minmax(50px, 1fr)
         minmax(100px, 1fr)
         minmax(100px, 1.5fr)
-        minmax(100px, 3fr)
+        minmax(100px, 2fr)
         minmax(100px, 1.1fr)
-        minmax(100px, 0.5fr)
+        minmax(100px, 1fr)
         minmax(100px, 0.5fr);
     overflow-y: scroll;
     overflow-x: hidden;
@@ -31,7 +31,7 @@
 .credit-table ::-webkit-scrollbar-track {
     border-radius: 10px;
     background-color: #FFD2D7;
-    }
+}
 .credit-table  thead,
 .credit-table  tbody,
 .credit-table  tr {

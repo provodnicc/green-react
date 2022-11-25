@@ -60,7 +60,7 @@ export const DepositCalcForm: FC<DepositCalcProps> = ({data}) => {
     return(
         <div className="container">
             <div className="deposit-info">
-                <div>
+                <div className="column">
                     <span>Сумма вклада:</span>
                     <Input 
                         itemType="number" 
@@ -69,7 +69,7 @@ export const DepositCalcForm: FC<DepositCalcProps> = ({data}) => {
                         className="ReactInput"
                     />
                 </div>
-                <div>
+                <div className="column">
                     <span>Срок хранения</span>
                     <Select 
                         className="ReactSelect"
@@ -80,9 +80,9 @@ export const DepositCalcForm: FC<DepositCalcProps> = ({data}) => {
                         onValueChange={onChangeDateHandler}
                     />
                 </div>
-                <Button className="ReactButton" onClick={sendData}>Найти</Button>
+                
             </div>
-            
+            <Button className="ReactButton" onClick={sendData}>Найти</Button>
             {
                 loaderState?
                     <div className="loading">
