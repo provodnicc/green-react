@@ -1,0 +1,23 @@
+/* Table font  */
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter-Regular'), url('./Inter-Regular.ttf') format('trutype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Default font  */
+@font-face {
+    font-family: 'Raleway';
+    src: local('Raleway-Regular'), url('./Raleway-Regular.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Email, numbers font  */
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto-Regular'), url('./Roboto-Regular.ttf') format('trutype');  
+    font-weight: normal;
+    font-style: normal;
+}

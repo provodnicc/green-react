@@ -1,0 +1,44 @@
+.container{
+    margin: auto;
+    display: grid;
+
+    
+
+
+}
+.loading{
+    vertical-align: middle;
+    text-align: center;
+}
+.loading > img{
+    width: 30vh;
+
+}
+
+.deposit-info{
+    display: flex;
+    
+    max-width: 80%; 
+    font-size: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+
+
+.deposit-info > *{
+    margin: 5px 10px;
+}
+
+/*
+
+input{
+    font-size: 20px;
+    border: 1px solid #449FFB;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 15px 12px;
+    margin-left: 25px;
+    align-items: center;
+}
+*/

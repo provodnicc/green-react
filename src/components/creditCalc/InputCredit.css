@@ -1,0 +1,11 @@
+ .input-credit-form{
+    display: grid;
+    margin:auto;
+    margin-bottom: 50px;
+    max-width: 80%;
+    font-size: 20px;
+}
+
+.input-credit-form > *{
+    margin: 5px 10px;
+}

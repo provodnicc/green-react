@@ -1,0 +1,59 @@
+.WalletLink{
+
+}
+
+.CreditLink{
+
+}
+
+.DepositLink{
+
+}
+
+.ProfileLink , .SignInLink{
+    position: relative;
+    margin: auto;
+    padding: 10px 0px;
+    cursor: pointer;
+
+}
+
+.Profile{
+    position: relative;
+    margin: auto;
+
+}
+
+.ProfileLink img, .SignInLink img{
+    vertical-align: middle;
+    margin-left: 25px;
+    width: 40px;
+    border-radius: 100%;
+}
+header {
+    position: relative;
+    z-index: 1;
+	max-width: 80%;
+	margin: 50px auto;
+    display: grid;
+	grid-template-columns: 3.5fr 2fr;
+    background: #FB4456;
+	border-radius: 10px;
+    color: #FFFFFF;
+	font-size: 20px;
+
+}
+
+.calcs{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    text-align: center;
+
+}
+
+.calcs div{
+    border-right: 1px solid #BDBDBD;
+    padding: 20px 0px;
+    cursor: pointer;
+
+}
