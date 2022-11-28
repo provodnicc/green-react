@@ -1,0 +1,33 @@
+.Register{
+    max-width: 300px;
+    margin: 50px auto;
+    display: grid;
+}
+.Register input{
+    margin: 5px auto;
+}
+.Register input::placeholder {
+    text-align: center; 
+ }
+.Register .ReactButton{
+    display: flex;
+    margin: 5px auto;
+}
+.Login{
+    max-width: 300px;
+    margin: 50px auto;
+    display: grid;
+}
+.Login input{
+    margin: 5px auto;
+}
+.Login input::placeholder {
+    text-align: center; 
+ }
+.Login .ReactButton{
+    display: flex;
+    margin: 5px auto;
+}
+span{
+    margin: 5px auto;
+}

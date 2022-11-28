@@ -21,11 +21,19 @@ export const TermSelect: React.FC<TermSelectProps> = ({
     onChange
 }) => {
     return(
-        <Select
+        <select className="ReactSelect" onChange={(x:any) => onChange(x)}>
+                {
+                    items.map((str, index)=>
+                        <option value={value != null ? value[index] : TermType.P1Y}>{str[1]}</option>
+                    )
+                }
+
+        </select>
+        /*<Select
             className = "ReactSelect"
             items = {items}
             value = {value != null ? value : TermType.P1Y}
             onValueChange = {(x:any) => onChange(x)}
-        />
+        />*/
     );
 };

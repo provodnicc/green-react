@@ -7,6 +7,7 @@ import {InputCredit} from "./InputCredit"
 import {PurposeType, Request} from "../../enums/purpose"
 import {TermType} from '../../enums/term'
 import { useEffect } from "react";
+import {SignIn} from '../SignIn/SignIn'
 
 
 interface CreditCalcProps{
@@ -113,7 +114,6 @@ export const CreditCalcForm: FC<CreditCalcProps> = ({
                             <img height="50vh" src={loading} alt="loading"/>
                         </div>: null
             }
-            
         </>
     )
 }

@@ -21,11 +21,21 @@ export const PurposeSelect: React.FC<PurposeSelectProps> = ({
     onChange
 }) => {
     return(
-        <Select
+    
+       <select className="ReactSelect" onChange={(x:any) => onChange(x)}>
+                {
+                    items.map((str, index)=>
+                        <option value={value != null ? value[index] : PurposeType.Money}>{str[1]}</option>
+                    )
+                }
+
+        </select>
+        /*<Select
             className = "ReactSelect"
             items = {items}
             value = {value != null ? value : PurposeType.Money}
             onValueChange = {(x:any) => onChange(x)}
-        />
+        /> */
+        
     );
 };

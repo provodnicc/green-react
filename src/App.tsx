@@ -7,10 +7,13 @@ import { Header } from './components/header/header';
 import { CreditCalcForm } from './components/creditCalc/creditCalc';
 import { WalletConverterForm } from './components/walletConverter/walletConverter';
 import { DepositCalcForm } from './components/depositCalc/depositCalc';
+import { History } from './components/history/history';
 import { Profile } from './components/profile/profile';
 
 import { User } from './types/User';
 import { HeaderLink } from './enums/header.enum';
+
+import { Routs } from './enums/routs';
 
 function App() {
   const [activeLinkState, setActiveLink] = useState<HeaderLink>(HeaderLink.WalletConverter)
@@ -47,7 +50,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header user={user} onClick={clickHandler} active={activeLinkState}/>
+      <Header user={user} onClick={clickHandler} active={activeLinkState} route={Routs.RouteApp}/>
       
       { 
         activeLinkState === HeaderLink.WalletConverter ?

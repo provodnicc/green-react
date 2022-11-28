@@ -5,27 +5,31 @@ import znak from './znak.svg'
 import { Link } from "./Link/Link";
 import { User } from "../../types/User";
 import { Profile } from "../profile/profile";
+import { Routs } from "../../enums/routs";
 
 
 interface HeaderProps{
     active: HeaderLink,
     user: User,
-    onClick: Function
+    onClick: Function,
+    route?: Routs
 }
 
 
 
-export const Header: FC<HeaderProps> = ({active, user, onClick}) => {
+export const Header: FC<HeaderProps> = ({active, user, onClick, route}) => {
     const [showProfile, setShowProfile] = useState(false)
     const Calcs = (
-        <div className="calcs">
-            {
-                active === HeaderLink.WalletConverter ? 
-                    <Link onClick={onClick} active={true} className={"WalletLink"}>{HeaderLink.WalletConverter}</Link>:
-                    <Link onClick={onClick} className={"WalletLink"}>{HeaderLink.WalletConverter}</Link>
-            }
-            {
-                active === HeaderLink.CreditCalc ?
+        /* Выбор пути */
+        route === Routs.RouteApp ?
+            <div className="calcs">
+                {
+                    active === HeaderLink.WalletConverter ? 
+                        <Link onClick={onClick} active={true} className={"WalletLink"}>{HeaderLink.WalletConverter}</Link>:
+                        <Link onClick={onClick} className={"WalletLink"}>{HeaderLink.WalletConverter}</Link>
+                }
+                {
+                    active === HeaderLink.CreditCalc ?
                     <Link onClick={onClick} active={true} className="CreditLink">{HeaderLink.CreditCalc}</Link>:
                     <Link onClick={onClick} className="CreditLink">{HeaderLink.CreditCalc}</Link>
             }
@@ -33,9 +37,26 @@ export const Header: FC<HeaderProps> = ({active, user, onClick}) => {
                 active === HeaderLink.DepositCalc ?
                     <Link onClick={onClick} active={true} className="CreditLink">{HeaderLink.DepositCalc}</Link>:
                     <Link onClick={onClick} className="DepositLink">{HeaderLink.DepositCalc}</Link>
+            }    
+            </div>
+        : 
+        <div className="calcs">
+                {
+                    active === HeaderLink.WalletConverterHistory ? 
+                        <Link onClick={onClick} active={true} className={"WalletLink"}>{HeaderLink.WalletConverterHistory}</Link>:
+                        <Link onClick={onClick} className={"WalletLink"}>{HeaderLink.WalletConverterHistory}</Link>
+                }
+            {
+                active === HeaderLink.CreditCalcHistory ?
+                    <Link onClick={onClick} active={true} className="CreditLink">{HeaderLink.CreditCalcHistory}</Link>:
+                    <Link onClick={onClick} className="CreditLink">{HeaderLink.CreditCalcHistory}</Link>
             }
-            
-        </div>
+            {
+                active === HeaderLink.DepositCalcHistory ?
+                    <Link onClick={onClick} active={true} className="CreditLink">{HeaderLink.DepositCalcHistory}</Link>:
+                    <Link onClick={onClick} className="DepositLink">{HeaderLink.DepositCalcHistory}</Link>
+            }    
+            </div>
     )
 
     const ProfileBlock = (

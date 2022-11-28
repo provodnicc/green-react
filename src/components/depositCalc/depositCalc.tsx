@@ -71,14 +71,16 @@ export const DepositCalcForm: FC<DepositCalcProps> = ({data}) => {
                 </div>
                 <div className="column">
                     <span>Срок хранения</span>
-                    <Select 
-                        className="ReactSelect"
-                        value={date} 
-                        items={
-                            Object.keys(DepositDateList)
-                        } 
-                        onValueChange={onChangeDateHandler}
-                    />
+
+                    <select className="ReactSelect" onChange={onChangeDateHandler}>
+                    {
+                        Object.keys(DepositDateList).map((str, index)=>
+                            <option value={date}>{str}</option>
+                        )
+                    }
+                    </select>
+
+                    
                 </div>
                 
             </div>

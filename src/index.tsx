@@ -9,20 +9,27 @@ import {
 
 import App from './App';
 import { YandexOauth } from './components/YandexOauth/YandexOauth';
+import { SignIn } from './components/SignIn/SignIn';
+import { History } from './components/history/history';
 
 
 
 const router = createBrowserRouter([
   {
-    
     path: "/",
     element: <App/>,
-
-    
   },
   {
     path: "/yandex/callback",
     element: <YandexOauth/>  
+  },
+  {
+    path: '/sign-in',
+    element: <SignIn/>
+  },
+  {
+    path: '/history',
+    element: <History/>
   }
 ]);
 

@@ -37,11 +37,13 @@ export class InputCredit extends React.Component<InputProps>{
                     </div>
                 </div>
                 <div className="row">
-                    <span>Желаемый срок кредита:</span>
-                    <TermSelect
-                        value ={this.props.request.term}
-                        onChange={this.handleCreditTermChange}
-                    />
+                  <div className="column">
+                        <span>Желаемый срок кредита:</span>
+                        <TermSelect
+                            value ={this.props.request.term}
+                            onChange={this.handleCreditTermChange}
+                        />
+                    </div>
                 </div>
             </div>
         </>

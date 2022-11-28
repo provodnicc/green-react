@@ -1,4 +1,1 @@
-export enum Valutes{
-    AUD = "AUD",
-    
-}
+import React from "react";
