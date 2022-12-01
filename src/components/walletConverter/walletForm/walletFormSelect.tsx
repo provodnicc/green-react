@@ -30,7 +30,7 @@ export const WalletFormSelect: FC<IWalletFormSelect> = ({names, onChange}) => {
             <select className="ReactSelect" onChange={handleSelect}>
                 {
                     names.map((str, index)=>
-                        <option value={index}>{str}</option>
+                        <option key={index} value={index}>{str}</option>
                     )
                 }
 

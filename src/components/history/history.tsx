@@ -2,8 +2,8 @@ import React, {FC, useState} from "react";
 import './history.css'
 
 
-import { Header } from '../../components/header/header';
-import { Profile } from '../../components/profile/profile';
+import { Header } from '../header/header';
+import { Profile } from '../profile/profile';
 
 import { User } from '../../types/User';
 import { HeaderLink } from '../../enums/header.enum';
@@ -47,7 +47,7 @@ export const History: FC<HistoryProp> = ({}) =>{
   }
     return(
         <>
-            <Header user={user} onClick={clickHandler} active={activeLinkState}/>
+            <Header active={activeLinkState}/>
       
       { 
         activeLinkState === HeaderLink.WalletConverterHistory ?

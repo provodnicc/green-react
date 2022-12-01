@@ -1,33 +1,46 @@
 .Register{
     max-width: 300px;
-    margin: 50px auto;
+    margin: auto;
     display: grid;
+    text-align: center;
 }
 .Register input{
-    margin: 5px auto;
+    margin: 10px auto;
 }
 .Register input::placeholder {
     text-align: center; 
  }
 .Register .ReactButton{
     display: flex;
-    margin: 5px auto;
+    margin: 15px auto 0px auto ;
 }
-.Login{
-    max-width: 300px;
-    margin: 50px auto;
-    display: grid;
-}
-.Login input{
-    margin: 5px auto;
-}
-.Login input::placeholder {
-    text-align: center; 
- }
-.Login .ReactButton{
-    display: flex;
-    margin: 5px auto;
+h2{
+    color: #404040;
 }
 span{
-    margin: 5px auto;
+    
+    margin: 15px auto;
 }
+
+.Yandex {
+    text-align: center;
+    border: 1px solid #449FFB;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px 0px;
+    margin-top: 45px;
+    cursor: pointer;
+    color: #449FFB;
+}
+.Yandex img{
+    vertical-align: middle;
+    width: 24px;
+    margin-left: 15px;
+}
+.changeAuthReg {text-decoration: underline; cursor: pointer;}
+/*.AuthContainer {
+    height: 50vh;
+    overflow-y: scroll;
+   
+
+}*/

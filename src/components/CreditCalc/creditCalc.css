@@ -1,0 +1,8 @@
+
+.loading{
+    vertical-align: middle;
+    text-align: center;
+}
+.loading > img{
+    height: 30vh;
+}

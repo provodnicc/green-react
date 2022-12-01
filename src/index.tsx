@@ -1,35 +1,61 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './fonts/Raleway-Regular.ttf';
-
+import { HistoryWalletPage } from './pages/HistoryWalletPage';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 
+
+//COMPONENTS
 import App from './App';
-import { YandexOauth } from './components/YandexOauth/YandexOauth';
-import { SignIn } from './components/SignIn/SignIn';
-import { History } from './components/history/history';
-
-
-
+import './fonts/fonts.css';
+import './index.css';
+import { YandexOauth } from './pages/YandexOauth';
+import { SignInPage } from './pages/SignInPage';
+import { CreditCalcPage } from './pages/CreditPage';
+import { Routes } from './enums/routes';
+import { WalletPage } from './pages/WalletPage';
+import { DepositPage } from './pages/DepositPage';
+import { HomePage } from './pages/HomePage';
+import { HistoryDepositPage } from './pages/HistoryDepositPage';
+import { HistoryCreditPage } from './pages/HistoryCreditPage';
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App/>,
+    path: Routes.HomeLink,
+    element: <HomePage/>,
   },
   {
-    path: "/yandex/callback",
+    path: Routes.YandexOauthLink,
     element: <YandexOauth/>  
   },
   {
-    path: '/sign-in',
-    element: <SignIn/>
+    path: Routes.SignInLink,
+    element: <SignInPage/>
   },
   {
-    path: '/history',
-    element: <History/>
+    path: Routes.HistoryWalletLink,
+    element: <HistoryWalletPage/>  
+  },
+  {
+    path: Routes.HistoryDepositLink,
+    element: <HistoryDepositPage/>  
+  },
+  {
+    path: Routes.HistoryCreditLink,
+    element: <HistoryCreditPage/>  
+  },
+  {
+    path: Routes.CreditLink,
+    element: <CreditCalcPage/>
+  },
+  {
+    path: Routes.WalletLink,
+    element: <WalletPage/>
+  },
+  {
+    path: Routes.DepositLink,
+    element: <DepositPage/>
   }
 ]);
 

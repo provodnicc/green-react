@@ -14,7 +14,7 @@ export const purposeTypes: PurposeType[] = [
     PurposeType.NewCar,
     PurposeType.UsedCar,
     PurposeType.Mortgage,
-    PurposeType.RefinanceCredit
+    PurposeType.RefinanceMortgage
 ];
 
 export const purposeTypeTitles: Record<PurposeType, string> = {
