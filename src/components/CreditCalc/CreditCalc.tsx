@@ -28,7 +28,8 @@ export const CreditCalc = () => {
         }
         const ArrayCreditStr = localStorage.getItem('ArrayCredit')
         const ArrayCredit = ArrayCreditStr ? JSON.parse(ArrayCreditStr!) : new Array<any>()
-        ArrayCredit.push([Date().toLocaleString(), request.amount, request.purpose, request.term])
+        const d = new Date();
+        ArrayCredit.push([d.toLocaleString(), request.amount, request.purpose, request.term])
         localStorage.setItem('ArrayCredit', JSON.stringify(ArrayCredit))
         
         fetch('https://teeest.xyz/key/data-for-table?' + new URLSearchParams(params))

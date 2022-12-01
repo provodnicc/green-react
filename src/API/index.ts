@@ -14,17 +14,5 @@ const IndexAPI = (baseURL: string)=>{
         API.interceptors.request.use(authInterseptors)
         return API
 }
-const $auth = axios.create({
-    withCredentials: true,
-    baseURL: config.API_AUTH+'/auth',
-    
-})
-
-const authInterseptors = (config: any) => {
-    config.headers.authorization = `Bearer ${localStorage.getItem('token')}`
-    return config
-}
-
-$auth.interceptors.request.use(authInterseptors)
 
 export {IndexAPI}

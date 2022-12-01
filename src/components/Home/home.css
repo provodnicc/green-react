@@ -1,0 +1,27 @@
+.home-page-container{
+    max-width: 80%;
+    
+    margin: auto;
+}
+.home-page-container h1{
+    text-align: center;
+    margin-bottom: 30px;
+    
+}
+
+.home-page-container .Carousel{
+    height: 100%;
+    margin: auto;
+}
+
+.home-page-container button{
+    background-color: transparent;
+    border: 0;
+    color: #449FFB;
+    font-size: 36px;
+    cursor: pointer;
+
+}
+.slide-container {
+    padding: 0 50px;
+}

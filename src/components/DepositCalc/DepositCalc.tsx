@@ -7,10 +7,10 @@ import loading from '../../media/loading.gif'
 
 import { DepositTable } from "./DepositTable/DepositTable";
 
-import { DepositDateList } from "../../types/deposit";
-
-
-export const DepositCalcForm = () => {
+import { DepositTerm, DepositTermPY, DepositTermType, DepositTermTypes } from "../../enums/term";
+import { observer } from "mobx-react-lite";
+import { historyDeposit } from "../../API/HistoryService";
+export const DepositCalcForm = observer(() => {
     const [sum, setSum] = useState('100000')
     const [date, setDate] = useState('1 год')
     const [deposits, setDeposits] = useState(new Array<any>())
@@ -25,7 +25,12 @@ export const DepositCalcForm = () => {
         setDate(value)
     }
 
-    function sendData(){
+    function onChangeDateIndexHandler(value: any){
+        console.log(value)
+
+    }
+
+    async function sendData(){
         setLoaderState(true)
         const params = {
             'productName':"vklady",
@@ -34,14 +39,20 @@ export const DepositCalcForm = () => {
             'sortProperty':'popularity',
             'sortDirection':'desc',
             'amount':String(sum),
-            'term': DepositDateList[date]// count days
+            'term': DepositTermPY[date]// count days
         }
-        const ArrayAmountStr = localStorage.getItem('ArrayAmount')
-       const ArrayAmount = ArrayAmountStr? JSON.parse(ArrayAmountStr!): new Array<any>()
-    ArrayAmount.push([sum,DepositDateList[date]])
-       localStorage.setItem('ArrayAmount', JSON.stringify(ArrayAmount))
+        try{
+            await historyDeposit.create({
+                amount: Number(params['amount']),
+                term: String(DepositTermTypes.filter((term: DepositTermType)=>{
+                    return DepositTerm[term] === date ? term : null 
+                }))
+            })
+        }catch(e){
+            console.log(e)
+        }
 
-       
+
         const stringParams = new URLSearchParams(params).toString()
         fetch("https://public.sravni.ru/v1/deposits/products?" + stringParams,{redirect:'follow'})
             .then(res => res.json())
@@ -73,7 +84,7 @@ export const DepositCalcForm = () => {
 
                     <select className="ReactSelect" onChange={(event)=>onChangeDateHandler(event.target.value)}>
                     {
-                        Object.keys(DepositDateList).map((str, index)=>
+                        Object.values(DepositTerm).map((str, index)=>
                             <option key={index} value={str}>{str}</option>
                         )
                     }
@@ -97,4 +108,4 @@ export const DepositCalcForm = () => {
 
         </div>
     )
-}
+})
