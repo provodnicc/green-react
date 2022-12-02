@@ -41,9 +41,9 @@ export const CreditTable: FC<CreditTable> = ({
                             <a href={organization_website} title={organization}>{organization}</a>
                         </td>
                         <td title={tarif}>{tarif}</td>
-                        <td>{perMonth} руб.</td>
-                        <td title={overPayment}>{overPayment} руб.</td>
-                        <td>{rate}</td>
+                        <td>от {perMonth} руб.</td>
+                        <td title={overPayment}>от {overPayment} руб.</td>
+                        <td>{rate}%</td>
                     </tr>
                 )
             })

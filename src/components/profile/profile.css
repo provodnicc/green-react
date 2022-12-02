@@ -1,19 +1,40 @@
-
+.page-shadow{
+    position: fixed;
+    z-index: 99;
+    background: #000;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 50%;
+}
 .ProfileBlock{
-    z-index: 2;
+    z-index: 100;
     background-color: #449FFB;
-    border-radius: 0 0 25px 25px;
-    /*box-shadow: -2px 2px 3px rgb(189, 189, 189);*/
+    border-radius: 25px;
+    /*box-shadow: 100px 2px 100vh rgb(0, 0, 0); */
     
-    width: max-content;
-    position: absolute;
-    right: -100px;
-    
-    padding: 0px 50px 50px 50px;
+    max-width: 500px;
+    min-width: 350px;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2% 3% 3% 3%;
+}
+.ProfileBlock h2{
+    color: #fff;
+}
+.ProfileBlock .close-button{ text-align: right; }
+.ProfileBlock .close-button span{
+    font-size: 24px;
+    cursor: pointer;
 }
 .ProfileBlock a{color: #ffff; text-decoration: none;}
 .listItem{
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
     border: 1px solid #ffff;
     border-radius: 5px;
@@ -21,6 +42,9 @@
     padding: 15px 12px;
     margin-top: 30px;
     cursor: pointer;
+}
+.listItem:first-child{
+    margin-top: 2000px; 
 }
 
 .exit{

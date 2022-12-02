@@ -1,7 +1,6 @@
 import { makeAutoObservable } from "mobx"
 import { historyDeposit } from "../API/HistoryService"
-import { DepositTermType } from "../enums/term"
-import { Deposit, setDeposit } from "../types/deposit"
+import { Deposit } from "../types/deposit"
 
 const initialDeposit = {
     amount: 0,
@@ -16,7 +15,7 @@ class DepositHistory {
         makeAutoObservable(this)
     }
 
-    save(deposit: setDeposit){
+    save(deposit: Deposit){
         historyDeposit.create(deposit).then((res)=>{
             this.deposits = res.data
         })

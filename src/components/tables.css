@@ -49,6 +49,14 @@
         minmax(100px, 2fr)
         minmax(100px, 0.7fr);
 }
+.wallet-history-table{
+    grid-template-columns: 
+        minmax(100px, 1fr)
+        minmax(100px, 2fr)
+        minmax(100px, 1fr)
+        minmax(100px, 2fr)
+        minmax(100px, 1fr);
+}
 .table-container table::-webkit-scrollbar {
     width: 12px;
     background-color: #FFD2D7;

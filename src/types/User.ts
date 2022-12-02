@@ -7,3 +7,8 @@ export interface UserLogin{
     email: string
     password: string
 }
+
+export interface OauthUser{
+    email: string
+    img: string
+}

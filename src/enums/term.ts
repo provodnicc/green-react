@@ -58,3 +58,10 @@ export const DepositTermPY : Record<string, string> ={
     '4 года': '1441',
     '5 лет': '1801',
 }
+export const DepositTermPYNames : Record<string, string> ={
+    '365' : '1 год' ,
+    '730' : '2 года' ,
+    '1001' : '3 года',
+    '1441': '4 года',
+    '1801':'5 лет' ,
+}

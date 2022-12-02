@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { AuthService } from "../API/AuthService";
 import { Error } from "../components/error/error";
 import { config } from "../config";
 
@@ -10,7 +11,7 @@ function getToken(){
     const params = Object.fromEntries(urlSearchParams.entries());
     return params.access_token
 }
-
+// set all to backend
 
 export const YandexOauth = ()=>{
     const [error, setError] = useState('')
@@ -20,24 +21,18 @@ export const YandexOauth = ()=>{
         fetch(config.OAUTH_YANDEX + token)
             .then( res => res.json())
             .then( res => {
-                    fetch( config.API_AUTH +'/auth/oauth' ,{
-                        method: 'post',
-                        headers:{
-                            'content-type':'application/json'
-                        },
-                        body:JSON.stringify({
-                            email: res.default_email,
-                            image: `https://avatars.yandex.net/get-yapic/${res.default_avatar_id}/islands-small`,
-                            // oauth: Oauth.YANDEX,
-                            token: token
-                        })
-                    })
-                        .catch(e => {
-                            console.log(e)
-                            setError(e)
-                        })
+                const body = {
+                    email: res.default_email,
+                    img: `https://avatars.yandex.net/get-yapic/${res.default_avatar_id}/islands-small`,
+                    // oauth: Oauth.YANDEX,
+                    token: token
+                }
+                AuthService.oauth(body).then(res=>{
+                    // setTimeout(()=>{window.location.replace('/')}, 500)
+                    window.location.replace('/')
+                })
             }).then(res=>{
-                // window.location.replace('/')
+                
             })
             .catch(e => {
                 console.log(e)

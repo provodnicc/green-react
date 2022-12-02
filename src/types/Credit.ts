@@ -5,5 +5,5 @@ export interface Credit{
     amount: number
     purpose: PurposeType
     term: TermType
-
+    createdAt?: Date
 }

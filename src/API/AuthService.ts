@@ -1,5 +1,5 @@
 import { config } from '../config'
-import { UserLogin } from '../types/User'
+import { OauthUser, UserLogin } from '../types/User'
 import { IndexAPI } from './index'
 
 
@@ -15,15 +15,15 @@ export class AuthService{
     }
 
     static async logout(){
-        return await $auth.get('/logout')
+        return await $auth.delete('/logout')
     }
 
     static async refresh(){
         return await $auth.get('/refresh')
     }
 
-    async oauth(){
-        return 
+    static async oauth(oauth: OauthUser){
+        return await $auth.post('/yandex', oauth)
     }
 }
 // $auth.interceptors()

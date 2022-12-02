@@ -5,6 +5,7 @@ import {PurposeType, Request} from "../../enums/purpose"
 import {TermType} from '../../enums/term'
 import { InputCredit } from "../../components/CreditCalc/InputCredit/InputCredit";
 import { CreditTable } from "../../components/CreditCalc/CreditCalcTable/creditCalcTable";
+import { historyCredit } from "../../API/HistoryService";
 
 
 const initialInput: Request ={
@@ -26,6 +27,11 @@ export const CreditCalc = () => {
             "purpose":request.purpose,
             "term": request.term
         }
+        historyCredit.create({
+            amount: request.amount,
+            purpose: request.purpose,
+            term: request.term
+        })
         const ArrayCreditStr = localStorage.getItem('ArrayCredit')
         const ArrayCredit = ArrayCreditStr ? JSON.parse(ArrayCreditStr!) : new Array<any>()
         const d = new Date();

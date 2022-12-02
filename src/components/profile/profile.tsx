@@ -1,27 +1,35 @@
 import React, { FC } from "react";
 import { User } from "../../types/User";
 import './profile.css';
-import { Link } from 'react-router-dom';
 import { observer } from "mobx-react-lite";
-import userSore from '../../store/User'
-interface ProfileProps {
-    user: User
-}
+import userStore from '../../store/User'
+import { Routes } from "../../enums/routes";
 
-export const Profile: FC<ProfileProps> = observer(({user}) => {
+export const Profile = observer(() => {
     return (
-    <div className="ProfileBlock" >
-        <div className="listItem">
-            {user.email}
-        </div> 
-        <div className="listItem">
-            <Link to="/history/wallet">История</Link>
-        </div> 
-        <div  className="listItem exit" onClick={()=>{
-            userSore.remove()
-        }}>
-            Выход
+    <>
+        <div className="page-shadow"></div>
+        <div className="ProfileBlock" >
+            
+            <div className="close-button">
+                <span>×</span>
+            </div>
+            <h2>Профиль</h2>
+            <div className="listItem">
+                {userStore.user.email}
+            </div> 
+            <div className="listItem" onClick={()=>{
+                window.location.replace(Routes.HistoryWalletLink)
+            }}>
+                История
+            </div> 
+            <div  className="listItem exit" onClick={()=>{
+                userStore.remove()
+                window.location.replace(Routes.WalletLink)
+            }}>
+                Выход
+            </div>
         </div>
-    </div>
+    </>
     )
 })

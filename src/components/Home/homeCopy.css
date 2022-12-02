@@ -3,6 +3,9 @@
     text-align: center;
     margin: auto;
 }
+.slideLeft, .slideRight{
+    z-index: 1;
+}
 .home-page-container h1{
     margin-bottom: 20px;
     color: #FB4456;
@@ -26,7 +29,6 @@
 
 }
 .slide-container {
-    fill: #FB4456;
     text-align: center;
     padding: 0 50px 50px 50px;
 }
@@ -44,6 +46,7 @@
 }
 .slide-container .slide-calc-description svg{
     width: 100px;
+    fill: #FB4456;
 }
 .slide-container h3{
     margin-bottom: 10px;
@@ -77,12 +80,16 @@
     fill: #404040;
     height: 100px;
 }
-
 .slide-container .slide-services{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    margin-top: 50px;
 }
-.slide-container .slide-services svg{
+
+.slide-container .slide-services .slide-service svg{
+    height: 105px;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 .slide-container .slide-technologies{

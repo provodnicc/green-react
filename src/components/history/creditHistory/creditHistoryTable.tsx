@@ -1,44 +1,50 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import '../../ReactFormStyles.css'
 import '../../tables.css';
 import { termTypeTitles, termTypes, TermType} from '../../../enums/term';
 import { purposeTypeTitles, purposeTypes, PurposeType } from '../../../enums/purpose';
 import { Link } from "react-router-dom";
 import { Routes } from '../../../enums/routes';
+import { historyCredit } from "../../../API/HistoryService";
+import { Credit } from "../../../types/Credit";
 
 
 
-interface CreditHistoryTable{
-
-}
 
 
-export const CreditHistoryTable: FC<CreditHistoryTable> = () => {
-    const ArrayCreditStr = localStorage.getItem('ArrayCredit');
-    const ArrayCredit = ArrayCreditStr ? JSON.parse(ArrayCreditStr!) : new Array<any>();
+export const CreditHistoryTable = () => {
+    const [row, setRow]= useState()
+    let flag = true
+    useEffect(()=>{
+        if(flag){
 
-    const rows = ArrayCredit.map((credit: any, index:number) => {
-        const items: Array<[PurposeType, string]> = [
-            ...purposeTypes.map<[PurposeType, string]>(x => [x, purposeTypeTitles[x]])
-        ];
-        const reason = items.find((e)=> e[0] === credit[2] ? e[1] : null);
-        const years: Array<[TermType, string]> = [
-            ...termTypes.map<[TermType, string]>(x => [x, termTypeTitles[x]])
-        ];
-        const year = years.find((e)=> e[0] === credit[3] ? e[1] : null);
-        return (
-            <tr key={index}>
-               <td title={credit[0]}>{credit[0]}</td>
-              <td title={credit[1]}>{credit[1]} ₽</td>
-              <td title={credit[2]}>{reason![1]}</td>
-              <td title={credit[3]}>{year![1]}</td>
-            </tr>
-        )
-    });
+            historyCredit.getAll().then(res=>{
+                const ArrayDeposit = res.data
+                const rows = ArrayDeposit.map((credit: Credit, index:number) => {
+                    const d = new Date(credit.createdAt!)
+                    return (
+                        <tr key={index}>
+                            <td title="date">{d.toLocaleString()}</td>
+                            <td title="amount">{credit.amount} ₽</td>
+                            <td title="purpose">{credit.purpose} ₽</td>
+                            <td title={credit.term}>{termTypeTitles[credit.term]}</td>
+                        </tr>
+                    )
+                });
+                setRow(rows)
+            })
+            flag=!flag
+        }
+ 
+    },[])
 
     return(
         <>
-            <div className="ReactLink"><Link  to={Routes.CreditLink}>Обратно к каклькулятору</Link></div>
+            <div className="ReactLink" onClick={()=>{
+                window.location.replace(Routes.CreditLink)
+            }}>
+                Обратно к калькулятору
+            </div>
             <div className="table-container">
                 <table className="credit-history-table">
                     <thead>
@@ -50,7 +56,7 @@ export const CreditHistoryTable: FC<CreditHistoryTable> = () => {
                       </tr>
                     </thead>
                     <tbody>
-                       {rows}
+                       {row}
                     </tbody>
                 </table> 
             </div>

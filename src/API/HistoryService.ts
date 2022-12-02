@@ -1,10 +1,10 @@
 import { IndexAPI } from ".";
 import { config } from "../config";
 import { HistoryEnum } from "../enums/history";
-import { Credit } from "../types/credit";
-import { Deposit, setDeposit } from "../types/deposit";
+import { Credit } from "../types/Credit";
+import { Deposit } from "../types/deposit";
 import { Wallet } from "../types/Wallet";
-
+import userStore from '../store/User'
 const $history = IndexAPI(config.API_HISTORY)
 
 class HistoryCreditService{
@@ -13,7 +13,8 @@ class HistoryCreditService{
         this.type = type
     }
 
-    async create(value: Credit | Wallet | Deposit|setDeposit){
+    async create(value: Credit | Wallet | Deposit){
+
         return await $history.post(this.type, value)
     }
 

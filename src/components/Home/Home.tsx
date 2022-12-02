@@ -1,6 +1,19 @@
 import React from "react";
-import "./home.css";
+
 import Carousel from "nuka-carousel";
+import { ReactComponent as ValuteConverterIcon } from './svg/moneyexchangecurrencysymbol_109818.svg';
+import { ReactComponent as CreditCalc } from './svg/savecostbudgetvaluepricecut_109773.svg';
+import { ReactComponent as DepositCalc } from './svg/handlecarepackageshippingbox_109784.svg';
+
+import { ReactComponent as FMember } from './svg/anime-boy-with-t-shirt-1_icon-icons.com_68054.svg';
+import { ReactComponent as SMember } from './svg/anime-boy-with-short-trausers_icon-icons.com_68059.svg';
+import { ReactComponent as TMember } from './svg/anime-boy-with-big-eyes_icon-icons.com_68064.svg';
+import { ReactComponent as FoMember } from './svg/anime-girl-with-ponytail_icon-icons.com_68047.svg';
+import { ReactComponent as YLOGO } from './svg/Yandex_logo_Cyrillic.svg';
+import { ReactComponent as SravniRu } from './svg/Site_sravni_logo_rus.svg';
+import { ReactComponent as CBR } from './svg/100.svg';
+import "./homeCopy.css";
+
 
 export const Home = ()=> { 
     return(
@@ -35,9 +48,11 @@ export const Home = ()=> {
                             </p>
                             <div className="slide-calcs">
                                 <section className="slide-calc-description">
+                                    <ValuteConverterIcon className="SVG"/>
                                     <h3>Конвертер валют</h3>
+                                    <span>—</span>
                                     <p>
-                                        — инструмент, который
+                                        инструмент, который
                                         позволит вам рассчитать
                                         соотношения актуальных
                                         курсов денежных средств
@@ -45,16 +60,20 @@ export const Home = ()=> {
                                     </p>
                                 </section>
                                 <section className="slide-calc-description">
-                                    <h3>Калькулятор кредитов</h3>
+                                    <CreditCalc/>
+                                    <h3>Калькулятор кредитов</h3>   
+                                    <span>—</span>
                                     <p>
-                                        - инструмент, что из тысячи предложений о кредитовании
+                                         инструмент, что из тысячи предложений о кредитовании
                                         найдёт для вас самое приемлемое. 
                                     </p>
                                 </section>
                                 <section className="slide-calc-description">
-                                    <h3>Калькулятор влкад</h3>
+                                    <DepositCalc />
+                                    <h3>Калькулятор вкладов</h3>
+                                    <span>—</span>
                                     <p>
-                                        — инструмент, который
+                                        инструмент, который
                                         поможет отыскать место, где ваши деньги не только
                                         сохранятся, но и преумножаться. 
                                     </p>
@@ -66,18 +85,22 @@ export const Home = ()=> {
                             <h2>О команде</h2>
                             <div className="slide-team">
                                 <section className="slide-team-member">
+                                    <FMember/>
                                     <h3>Павел Смирнов</h3>
                                     <p>Тимлид, ...</p>
                                 </section>
                                 <section className="slide-team-member">
+                                    <SMember/>
                                     <h3>Илья Лебединский</h3>
                                     <p>...</p>
                                 </section>
                                 <section className="slide-team-member">
+                                    <TMember/>  
                                     <h3>Алексей Ширяев</h3>
                                     <p>...</p>
                                 </section>
                                 <section className="slide-team-member">
+                                    <FoMember/>
                                     <h3>Александра Быкова</h3>
                                     <p>...</p>
                                 </section>
@@ -87,7 +110,7 @@ export const Home = ()=> {
                             <h2>Об используемых сервисах</h2>
                             <div className="slide-services">
                                 <section className="slide-service">
-                                    <img alt="CBR" src="#" />
+                                    <CBR className="CBR"/>
                                     <h3>ЦБ РФ</h3>
                                     <p>
                                         Используется для получения актуальных
@@ -95,12 +118,12 @@ export const Home = ()=> {
                                     </p>
                                 </section>
                                 <section className="slide-service">
-                                    <img alt="sravni.ru" src="#" />
+                                    <SravniRu />
                                     <h3>sravni.ru</h3>
                                     <p>Источник данных о кредитах и вкладах</p>
                                 </section>
                                 <section className="slide-service">
-                                    <img alt="YaOAuth" src="#" />
+                                    <YLOGO />
                                     <h3>Yandex OAuth</h3>
                                     <p>
                                         Сервис, позволяющий пользователю совершать
@@ -122,7 +145,6 @@ export const Home = ()=> {
                         </section>
                     
                     </Carousel>
-
             </div>
         </>
     )

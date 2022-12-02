@@ -8,7 +8,6 @@ import {
 
 
 //COMPONENTS
-import App from './App';
 import './fonts/fonts.css';
 import './index.css';
 import { YandexOauth } from './pages/YandexOauth';

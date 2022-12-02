@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { HeaderLink } from "../../enums/header.enum";
 import './header.css'
 import { Link } from "react-router-dom";
@@ -7,6 +7,7 @@ import { Profile } from "../profile/profile";
 import { Routes } from "../../enums/routes";
 import userStore from '../../store/User'
 import { observer } from "mobx-react-lite";
+import { AuthService } from "../../API/AuthService";
 interface HeaderProps{
     active: HeaderLink,
     mode?: HeaderLink.History | HeaderLink.Home
@@ -15,9 +16,18 @@ interface HeaderProps{
 
 
 export const Header: FC<HeaderProps> = observer(({active, mode}) => {
-
     const [showProfile, setShowProfile] = useState(false)
+    let flag = true
+
+    useEffect(()=>{
+        if(flag) {
+            userStore.refresh()
+                flag = !flag
+        }
+    },[])
+
     const user = userStore.user
+
     const Calcs = (
         /* Выбор пути */
         mode !== HeaderLink.History?
@@ -73,7 +83,7 @@ export const Header: FC<HeaderProps> = observer(({active, mode}) => {
                 <span>{HeaderLink.Profile}</span>
                 <img src={user.imageUrl}/>
             </div>
-            {showProfile? <Profile user={user}/>: null}
+            {showProfile? <Profile />: null}
         </div>
     )
 

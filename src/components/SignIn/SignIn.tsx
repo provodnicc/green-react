@@ -10,6 +10,7 @@ import userStore from '../../store/User'
 import { Routes } from "../../enums/routes";
 
 export const SignIn = observer(() => {
+    
     const [register, setRegister] = useState<UserLogin>(() => {
         return {
             email: "",
@@ -26,6 +27,9 @@ export const SignIn = observer(() => {
 
     const [state, setState] = useState(false)
 
+    function check(data:UserLogin){
+        return (data.email.match(/.+@.+\..+/) && data.password.match(/.{3,}/)) ? 1 : 0;
+    }
     const changeInputRegister = (event:any):void => {
         setRegister(prev => {
             return {
@@ -37,26 +41,40 @@ export const SignIn = observer(() => {
 
     const changeInputLogin = (event:any):void => {
         setLogin(prev => {
-            return {
-                ...prev,
-                [event.target.name]: event.target.value,
-            }
-        })
-    }
+                return {
+                    ...prev,
+                    [event.target.name]: event.target.value,
+                }
+            })
+        }
+    
 
     async function signUpHandler(){
-        const res = await AuthService.SignUp(register)
-        if(res){
-            setState(!state)
+
+        if (check(register)){
+            const res = await AuthService.SignUp(register)
+            if(res){
+                setState(!state)
+            }
         }
+        else{
+            alert("Ошибка! Пароль меньше 3 символов, или неверный E-mail.");
+        }
+        
     }
 
     async function signInHandler(){
-        const res = await AuthService.SignIn(login)
-        const token = res.data
-        localStorage.setItem('token', token)
-        userStore.save({...login, imageUrl: ''})
-        window.location.replace(Routes.WalletLink)
+        if (check(login)){
+            const res = await AuthService.SignIn(login)
+            const token = res.data
+            localStorage.setItem('token', token)
+            userStore.save({...login, imageUrl: ''})
+            window.location.replace(Routes.WalletLink)
+        }
+        else{
+            alert("Ошибка! Пароль меньше 3 символов, или неверный E-mail.");
+        }
+        
     }
 
     function oauthClick(){
@@ -79,6 +97,7 @@ export const SignIn = observer(() => {
                 placeholder='Почта'
                 value = {register.email}
                 onChange = {changeInputRegister}
+                required
               />
             <input
                 name="password"
@@ -86,6 +105,7 @@ export const SignIn = observer(() => {
                 placeholder='Пароль'
                 value = {register.password}
                 onChange = {changeInputRegister}
+                required
              />
             <Button className="ReactButton" onClick={signUpHandler}>Зарегистрироваться</Button>
             {Yandex}
@@ -102,6 +122,7 @@ export const SignIn = observer(() => {
                 placeholder='Почта'
                 value = {login.email}
                 onChange = {changeInputLogin}
+                required
               />
             <input
                 name="password"
@@ -109,6 +130,7 @@ export const SignIn = observer(() => {
                 placeholder='Пароль'
                 value = {login.password}
                 onChange = {changeInputLogin}
+                required
              />
                 <Button className="ReactButton" onClick={signInHandler}>Войти</Button>
                 {Yandex}
