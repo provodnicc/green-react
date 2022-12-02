@@ -12,6 +12,13 @@ import { ReactComponent as FoMember } from './svg/anime-girl-with-ponytail_icon-
 import { ReactComponent as YLOGO } from './svg/Yandex_logo_Cyrillic.svg';
 import { ReactComponent as SravniRu } from './svg/Site_sravni_logo_rus.svg';
 import { ReactComponent as CBR } from './svg/100.svg';
+
+import { ReactComponent as AxiosLogo } from './svg/4 slide/Axios_(computer_library)_logo.svg';
+import { ReactComponent as DjangoLogo } from './svg/4 slide/Django_(web_framework)-Logo.wine.svg';
+import { ReactComponent as MobxLogo } from './svg/4 slide/mobx.svg';
+import { ReactComponent as NestJSLogo } from './svg/4 slide/nestjs-seeklogo.com.svg';
+import { ReactComponent as PostgreLogo } from './svg/4 slide/Postgresql_elephant.svg';
+import { ReactComponent as ReactIcon } from './svg/4 slide/React-icon.svg';
 import "./homeCopy.css";
 
 
@@ -118,12 +125,12 @@ export const Home = ()=> {
                                     </p>
                                 </section>
                                 <section className="slide-service">
-                                    <SravniRu />
+                                    <SravniRu className="SravniRu"/>
                                     <h3>sravni.ru</h3>
                                     <p>Источник данных о кредитах и вкладах</p>
                                 </section>
                                 <section className="slide-service">
-                                    <YLOGO />
+                                    <YLOGO className="YLOGO"/>
                                     <h3>Yandex OAuth</h3>
                                     <p>
                                         Сервис, позволяющий пользователю совершать
@@ -135,12 +142,12 @@ export const Home = ()=> {
                         <section className="slide-container">
                             <h2>О стеке</h2>
                             <div className="slide-technologies">
-                                <img alt="React" src="#" />
-                                <img alt="Django" src="#" />
-                                <img alt="MobX" src="#" />
-                                <img alt="Axios" src="#" />
-                                <img alt="NestJs" src="#" />
-                                <img alt="PostgreSQL" src="#" />
+                                <ReactIcon className="l1"/>
+                                <DjangoLogo className="l2"/>
+                                <MobxLogo className="l3"/>
+                                <NestJSLogo className="l5"/>
+                                <PostgreLogo className="l4"/>
+                                <AxiosLogo className="l6"/>
                             </div>
                         </section>
                     

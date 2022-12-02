@@ -63,6 +63,19 @@ header {
     
 
 }
+.history-calcs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.history-calcs a {
+    border-right: 1px solid #BDBDBD;
+    padding: 20px 0px;
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+}
 
 .calcs a{
     border-right: 1px solid #BDBDBD;

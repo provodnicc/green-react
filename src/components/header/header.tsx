@@ -53,28 +53,23 @@ export const Header: FC<HeaderProps> = observer(({active, mode}) => {
                         <Link to={Routes.DepositLink} className="DepositLink Link">{HeaderLink.DepositCalc}</Link>
                 }
             </div>: 
-        <div className="calcs">
-            {
+            <div className="history-calcs">
+                {
                     active === HeaderLink.Home ? 
                         <Link to={Routes.HomeLink} className={"HomeLink Link active"}>{HeaderLink.Home}</Link>:
                         <Link to={Routes.HomeLink} className={"HomeLink Link"}>{HeaderLink.Home}</Link>
                 }
-            {
-                active === HeaderLink.WalletConverterHistory ? 
-                    <Link to={Routes.HistoryWalletLink} className={"WalletLink Link active"}>{HeaderLink.WalletConverterHistory}</Link>:
-                    <Link to={Routes.HistoryWalletLink} className={"WalletLink Link"}>{HeaderLink.WalletConverterHistory}</Link>
-            }
-            {
-                active === HeaderLink.CreditCalcHistory ?
-                <Link to={Routes.HistoryCreditLink} className="CreditLink Link active">{HeaderLink.CreditCalcHistory}</Link>:
-                <Link to={Routes.HistoryCreditLink} className="CreditLink Link">{HeaderLink.CreditCalcHistory}</Link>
-            }
-            {
-                active === HeaderLink.DepositCalcHistory ?
-                    <Link to={Routes.HistoryDepositLink} className="DepositLink Link active">{HeaderLink.DepositCalcHistory}</Link>:
-                    <Link to={Routes.HistoryDepositLink} className="DepositLink Link">{HeaderLink.DepositCalcHistory}</Link>
-            }
-        </div>
+                {
+                    active === HeaderLink.CreditCalcHistory ?
+                        <Link to={Routes.HistoryCreditLink} className="CreditLink Link active">{HeaderLink.CreditCalcHistory}</Link>:
+                        <Link to={Routes.HistoryCreditLink} className="CreditLink Link">{HeaderLink.CreditCalcHistory}</Link>
+                }
+                {
+                    active === HeaderLink.DepositCalcHistory ?
+                        <Link to={Routes.HistoryDepositLink} className="DepositLink Link active">{HeaderLink.DepositCalcHistory}</Link>:
+                        <Link to={Routes.HistoryDepositLink} className="DepositLink Link">{HeaderLink.DepositCalcHistory}</Link>
+                }
+            </div>
     )
 
     const ProfileBlock = (

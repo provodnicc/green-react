@@ -91,8 +91,36 @@
     font-size: 24px;
     margin-bottom: 20px;
 }
-
+.slide-container .slide-technologies svg{
+    height: 100px; 
+}
 .slide-container .slide-technologies{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;  
+    justify-content: space-around;
+    margin-top: 80px;
+}
+.slide-container .slide-technologies .l1{
+    grid-column: span 1;
+}
+.slide-container .slide-technologies .l2{
+    width: 200px;
+    grid-column: span 1;
+}
+.slide-container .slide-technologies .l3{
+    width: 100px;
+    grid-column: span 1;
+}
+.slide-container .slide-technologies .l4{
+    width: 100px;
+    grid-column: span 1;
+}
+.slide-container .slide-technologies .l5{
+    width: 100px;
+    grid-column: span 1;
+}
+.slide-container .slide-technologies .l6{
+    grid-column: 1/6;
+    justify-self: center;
+    margin-top: 80px;
+    grid-row: span 2;
 }

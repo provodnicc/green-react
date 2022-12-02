@@ -33,11 +33,11 @@ export const WalletConverterTable: FC<WalletConverterTableProp> = ({}) => {
             .catch(e=>setWallets(defaultWallet))
     }
 
-    
+
     useEffect(()=>{
-        
         fetchWallet()
     },[])
+
 	const Rows = wallets.map((wallet: Wallet)=>{
         return(
             <tr key={wallet.NumCode}>

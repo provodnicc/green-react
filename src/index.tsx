@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { HistoryWalletPage } from './pages/HistoryWalletPage';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -31,10 +30,6 @@ const router = createBrowserRouter([
   {
     path: Routes.SignInLink,
     element: <SignInPage/>
-  },
-  {
-    path: Routes.HistoryWalletLink,
-    element: <HistoryWalletPage/>  
   },
   {
     path: Routes.HistoryDepositLink,

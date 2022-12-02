@@ -4,16 +4,13 @@ import { WalletFormInput } from "./walletFormInput";
 import { Wallet } from "../../../types/Wallet";
 
 import "./walletForm.css";
-interface WalletForm{
-
-}
 
 const defaultWalletName:WalletNames = {
 	name: "",
 	value: 0
 }
 
-export const WalletForm: FC<WalletForm> = ({}) => {
+export const WalletForm = ({}) => {
 	/* SELECTS  */
 	const [walletNames, setWalletNames] = useState<string[]>([]);
 	const [fromWalletSelected, setFromWalletSelected] = useState<WalletNames>(defaultWalletName);
@@ -105,6 +102,7 @@ export const WalletForm: FC<WalletForm> = ({}) => {
 	useEffect(()=>{
 		calculValute();
 	}, [fromInputValue, val1, val2]);
+
 	useEffect(()=>{
 		valuteCalculAfterSelection();
 	}, [toWalletSelected, fromWalletSelected]);

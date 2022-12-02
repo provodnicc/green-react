@@ -19,7 +19,7 @@ export const Profile = observer(() => {
                 {userStore.user.email}
             </div> 
             <div className="listItem" onClick={()=>{
-                window.location.replace(Routes.HistoryWalletLink)
+                window.location.replace(Routes.HistoryCreditLink)
             }}>
                 История
             </div> 

@@ -3,8 +3,6 @@ import { config } from "../config";
 import { HistoryEnum } from "../enums/history";
 import { Credit } from "../types/Credit";
 import { Deposit } from "../types/deposit";
-import { Wallet } from "../types/Wallet";
-import userStore from '../store/User'
 const $history = IndexAPI(config.API_HISTORY)
 
 class HistoryCreditService{
@@ -13,7 +11,7 @@ class HistoryCreditService{
         this.type = type
     }
 
-    async create(value: Credit | Wallet | Deposit){
+    async create(value: Credit | Deposit){
 
         return await $history.post(this.type, value)
     }
@@ -26,7 +24,7 @@ class HistoryCreditService{
         return await $history.get(this.type+'/'+id)
     }
 
-    async update(id: number, value: Credit| Wallet | Deposit){
+    async update(id: number, value: Credit | Deposit){
         return await $history.patch(this.type+'/'+id, value)
     } 
 
@@ -37,10 +35,8 @@ class HistoryCreditService{
 
 const historyCredit = new HistoryCreditService(HistoryEnum.Credits)
 const historyDeposit = new HistoryCreditService(HistoryEnum.Deposits)
-const historyWallet = new HistoryCreditService(HistoryEnum.Wallet)
 
 export {
     historyCredit,
     historyDeposit,
-    historyWallet
 }

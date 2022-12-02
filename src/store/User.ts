@@ -31,8 +31,6 @@ class UserStore {
             }else{
                 this.user.imageUrl = res.data.user.img
             }
-        }).catch(e=>{
-            this.remove()
         })
     }
     

@@ -26,7 +26,7 @@ export const CreditHistoryTable = () => {
                         <tr key={index}>
                             <td title="date">{d.toLocaleString()}</td>
                             <td title="amount">{credit.amount} ₽</td>
-                            <td title="purpose">{credit.purpose} ₽</td>
+                            <td title="purpose">{purposeTypeTitles[credit.purpose]}</td>
                             <td title={credit.term}>{termTypeTitles[credit.term]}</td>
                         </tr>
                     )

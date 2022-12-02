@@ -7,11 +7,3 @@ export interface Wallet{
     Previous: number
     Value: number
 }
-
-export interface APIWallet{
-    walletFrom: string
-    walletTo: string
-    startValue: number 
-    finishValue: number
-    createdAt?: Date
-}
