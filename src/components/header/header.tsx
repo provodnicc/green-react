@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import { HeaderLink } from "../../enums/header.enum";
-import './header.css'
+import './header.css';
+import './media.css';
 import { Link } from "react-router-dom";
 import { User } from "../../types/User";
 import { Profile } from "../profile/profile";
@@ -21,7 +22,7 @@ export const Header: FC<HeaderProps> = observer(({active, mode}) => {
 
     useEffect(()=>{
         if(flag) {
-            userStore.refresh()
+            Promise.all([userStore.refreshAsync()])
                 flag = !flag
         }
     },[])

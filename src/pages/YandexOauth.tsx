@@ -23,7 +23,7 @@ export const YandexOauth = ()=>{
             .then( res => {
                 const body = {
                     email: res.default_email,
-                    img: `https://avatars.yandex.net/get-yapic/${res.default_avatar_id}/islands-small`,
+                    img_id: String(res.default_avatar_id),
                     // oauth: Oauth.YANDEX,
                     token: token
                 }

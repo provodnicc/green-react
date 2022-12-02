@@ -24,6 +24,7 @@ class UserStore {
 
     refresh(){
         AuthService.refresh().then(res=>{
+            
             localStorage.setItem('token', res.data.token)
             this.user.email = res.data.user.email
             if(!res.data.user.img){
@@ -46,12 +47,13 @@ class UserStore {
     }
 
     remove(){
-        localStorage.removeItem('user')
-        localStorage.removeItem('token')    
-
-        AuthService.logout().then((res)=>{
-            this.user = initialUser
-        })
+            localStorage.removeItem('user')
+            localStorage.removeItem('token')    
+    
+            AuthService.logout().then((res)=>{
+                this.user = initialUser
+            })
+                
     }
 
     async removeAsync(){

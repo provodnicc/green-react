@@ -139,10 +139,10 @@ export const SignIn = observer(() => {
         </div>
     )
 
-    const TEST = <Button onClick={async ()=>{
+  /*  const TEST = <Button onClick={async ()=>{
         const res= await AuthService.refresh()
         console.log(res)
-    }}> refresh Token</Button>
+    }}> refresh Token</Button>*/
 
     return(
         <div className="AuthContainer">
@@ -150,7 +150,6 @@ export const SignIn = observer(() => {
                 state? Login : Registration
             }
 
-            {TEST}
 
 
         </div>

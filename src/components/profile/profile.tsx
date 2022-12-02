@@ -24,8 +24,9 @@ export const Profile = observer(() => {
                 История
             </div> 
             <div  className="listItem exit" onClick={()=>{
-                userStore.remove()
-                window.location.replace(Routes.WalletLink)
+                    userStore.removeAsync().then(()=>{
+                        window.location.replace(Routes.WalletLink)
+                    })
             }}>
                 Выход
             </div>

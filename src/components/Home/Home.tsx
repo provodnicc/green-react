@@ -94,22 +94,22 @@ export const Home = ()=> {
                                 <section className="slide-team-member">
                                     <FMember/>
                                     <h3>Павел Смирнов</h3>
-                                    <p>Тимлид, ...</p>
+                                    <p>Тимлид, калькулятор вкладов, back-end</p>
                                 </section>
                                 <section className="slide-team-member">
                                     <SMember/>
                                     <h3>Илья Лебединский</h3>
-                                    <p>...</p>
+                                    <p>Калькулятор кредитов, скрипты</p>
                                 </section>
                                 <section className="slide-team-member">
                                     <TMember/>  
                                     <h3>Алексей Ширяев</h3>
-                                    <p>...</p>
+                                    <p>Конвертер валют, дизайн, вёрстка</p>
                                 </section>
                                 <section className="slide-team-member">
                                     <FoMember/>
                                     <h3>Александра Быкова</h3>
-                                    <p>...</p>
+                                    <p>Бюрократия</p>
                                 </section>
                             </div>
                         </section>

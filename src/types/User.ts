@@ -10,5 +10,5 @@ export interface UserLogin{
 
 export interface OauthUser{
     email: string
-    img: string
+    img_id: string
 }

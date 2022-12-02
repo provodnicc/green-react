@@ -1,0 +1,19 @@
+
+@media screen and (max-width: 900px){
+
+    .ProfileLink , .SignInLink{padding: 0px 0px;}
+    .ProfileLink span{display: none;}
+    .active{
+        font-weight: normal;
+        text-decoration: underline; 
+    } 
+    .ProfileLink img, .SignInLink img{margin-left: 0;}
+    header {
+        max-width: 100%;
+        margin: 0;
+        margin-bottom: 50px;
+        border-radius: 0px;
+        font-size: 14px;
+    }  
+    .calcs{grid-template-columns: 1fr 1fr 1fr 1fr;}
+}
