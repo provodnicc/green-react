@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4412ad7d.css",
+    "main.js": "/static/js/main.f21936d1.js",
+    "static/media/Inter-Regular.ttf": "/static/media/Inter-Regular.c5062a4ed12a20eda282.ttf",
+    "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.ad6be3c552999bbf0879.ttf",
+    "static/media/Raleway-Regular.ttf": "/static/media/Raleway-Regular.d08d2d573013d2e8356f.ttf",
+    "static/media/100.svg": "/static/media/100.f77a44f4dedc8a0f14c56b3d74c32ce0.svg",
+    "static/media/loading.gif": "/static/media/loading.d8baec1624c5850bb857.gif",
+    "static/media/Site_sravni_logo_rus.svg": "/static/media/Site_sravni_logo_rus.fe3f396dbbe8a7d6764d8622fbc1f99c.svg",
+    "static/media/nestjs-seeklogo.com.svg": "/static/media/nestjs-seeklogo.com.6b64ab7782fa4ca87cf8d193ee2be1f1.svg",
+    "static/media/anime-boy-with-big-eyes_icon-icons.com_68064.svg": "/static/media/anime-boy-with-big-eyes_icon-icons.com_68064.7c0c1086b58f0c6c3885954506907127.svg",
+    "static/media/anime-boy-with-t-shirt-1_icon-icons.com_68054.svg": "/static/media/anime-boy-with-t-shirt-1_icon-icons.com_68054.734c6420693cb21e1556b1b1ba833f05.svg",
+    "static/media/anime-boy-with-short-trausers_icon-icons.com_68059.svg": "/static/media/anime-boy-with-short-trausers_icon-icons.com_68059.6946a1573ea959ce3a75bdf2a6ddf89b.svg",
+    "static/media/anime-girl-with-ponytail_icon-icons.com_68047.svg": "/static/media/anime-girl-with-ponytail_icon-icons.com_68047.2f600171fefbf71fe6a484349d8ad602.svg",
+    "static/media/handlecarepackageshippingbox_109784.svg": "/static/media/handlecarepackageshippingbox_109784.8d47b53d31eb7d8b1887f39227103a09.svg",
+    "static/media/savecostbudgetvaluepricecut_109773.svg": "/static/media/savecostbudgetvaluepricecut_109773.aacaeaf9d3a7d8c04088a8eef3c2b38c.svg",
+    "static/media/moneyexchangecurrencysymbol_109818.svg": "/static/media/moneyexchangecurrencysymbol_109818.55b4c7a745ff61449587162a1af40708.svg",
+    "static/media/Postgresql_elephant.svg": "/static/media/Postgresql_elephant.29aef66790dafa021ec4c36bbd59e370.svg",
+    "static/media/Django_(web_framework)-Logo.wine.svg": "/static/media/Django_(web_framework)-Logo.wine.b0b98b60acbd0eb4f71a743f8a8e3403.svg",
+    "static/media/Axios_(computer_library)_logo.svg": "/static/media/Axios_(computer_library)_logo.7b7ef02dc757d2e4adecf7e1a8fcd3ed.svg",
+    "static/media/Yandex_logo_Cyrillic.svg": "/static/media/Yandex_logo_Cyrillic.60f4a89a63337eee4a46690023647cfa.svg",
+    "static/media/mobx.svg": "/static/media/mobx.b2519d0d39275a4661ae9fc8c005082f.svg",
+    "static/media/znak.svg": "/static/media/znak.4883befb696725cfc80cb3be50bb296d.svg",
+    "index.html": "/index.html",
+    "static/media/React-icon.svg": "/static/media/React-icon.928f956d9c8ebcffb98a8e917154a81a.svg",
+    "main.4412ad7d.css.map": "/static/css/main.4412ad7d.css.map",
+    "main.f21936d1.js.map": "/static/js/main.f21936d1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4412ad7d.css",
+    "static/js/main.f21936d1.js"
+  ]
+}
