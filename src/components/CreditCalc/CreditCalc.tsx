@@ -6,7 +6,7 @@ import {TermType} from '../../enums/term'
 import { InputCredit } from "../../components/CreditCalc/InputCredit/InputCredit";
 import { CreditTable } from "../../components/CreditCalc/CreditCalcTable/creditCalcTable";
 import { historyCredit } from "../../API/HistoryService";
-
+import requests from '../../API/RequestsService'
 
 const initialInput: Request ={
     amount: 30000,
@@ -20,17 +20,17 @@ export const CreditCalc = () => {
     const [credits, setCredits] = useState(new Array<any>())
     const [loadingState, setLoadingState] = useState(false)
     
-    const sendData = (request:any) =>{
+    const sendData = (request: Request) =>{
         setLoadingState(true)
         const params = {
-            "amount": String(request.amount),
-            "purpose":request.purpose,
-            "term": request.term
+            amount: request.amount,
+            purpose:request.purpose,
+            term: request.term
         }
         historyCredit.create({
             amount: request.amount,
-            purpose: request.purpose,
-            term: request.term
+            purpose: request.purpose!,
+            term: request.term!
         })
         const ArrayCreditStr = localStorage.getItem('ArrayCredit')
         const ArrayCredit = ArrayCreditStr ? JSON.parse(ArrayCreditStr!) : new Array<any>()
@@ -38,12 +38,11 @@ export const CreditCalc = () => {
         ArrayCredit.push([d.toLocaleString(), request.amount, request.purpose, request.term])
         localStorage.setItem('ArrayCredit', JSON.stringify(ArrayCredit))
         
-        fetch('https://teeest.xyz/key/data-for-table?' + new URLSearchParams(params))
-            .then((response) => response.json())
-            .then((json) => {
-                setCredits(json)
-                setLoadingState(false)
-            });
+        requests.getBanks(params).then((res)=>{
+            setCredits(res.data)
+            setLoadingState(false)
+        }
+        )
     }
 
     function inputHandler(value: Request){

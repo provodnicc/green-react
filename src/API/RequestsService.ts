@@ -2,11 +2,13 @@ import { IndexAPI } from ".";
 import { config } from "../config";
 import {Request} from "../enums/purpose"
 
-const $history = IndexAPI(config.API_HISTORY)
+const $requests = IndexAPI(config.REQUESTS)
 
 class RequestsService{
     async getBanks(request:Request){
-        return await $history.get(`https://teeest.xyz/key/data-for-table?amount=${request.amount}&term=${request.term}&purpose=${request.purpose}`)
+        // new URLSearchParams(JSON.stringify(request))
+        return await $requests.get(`/key/data-for-table?amount=${request.amount}&term=${request.term}&purpose=${request.purpose}`)
     }
 }
-'https://teeest.xyz/key/data-for-table?amount=1000000&term=P1Y&purpose=Money'
+
+export default new RequestsService()
